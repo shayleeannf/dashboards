@@ -1,0 +1,57 @@
+---
+title: "Palmer Penguins Dashboard"
+author: "Shaylee Ferrer"
+format: dashboard
+---
+
+```{r}
+##install.packages("tidyverse")
+library(tidyverse)
+library(plotly)
+library(palmerpenguins)
+
+penguins <- penguins
+```
+
+# Page 1
+
+## Row 1
+
+```{r}
+mass_by_island <- ggplot(data = penguins, aes(x = island, y = body_mass_g)) +
+  geom_boxplot()
+
+ggplotly(mass_by_island)
+```
+
+```{r}
+bill_by_island <- ggplot(data = penguins, aes(island, bill_length_mm)) +
+  geom_boxplot()
+
+ggplotly(bill_by_island)
+```
+
+## Row 2 {.tabset}
+
+```{r}
+#| title: Flipper Length by Mass
+ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
+  geom_point()
+```
+
+```{r}
+#| title: Bill Length by Mass
+ggplot(penguins, aes(body_mass_g, bill_length_mm, color = species)) +
+  geom_point()
+```
+
+# Data Table
+
+THis dataset describes 344 penguins and comes form the palerpenguins package. There are 3 species of penguins that live on 3 different islands in the Palmer Archipelago.
+
+```{r}
+penguins <- penguins |>
+  select(-c(year))
+
+knitr::kable(penguins)
+```
