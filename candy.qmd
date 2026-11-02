@@ -1,0 +1,55 @@
+---
+title: "Candy Dashboard"
+author: "Shaylee-Ann Billaber-Ferrer"
+date: "11/2/26"
+format: 
+  dashboard:
+    theme: sketchy
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(plotly)
+
+##install.packages("fivethirtyeight")
+library(fivethirtyeight)
+
+candy <- fivethirtyeight::candy_rankings
+
+candy <- candy |>
+  mutate(type = case_when(
+    chocolate & fruity ~ "both",
+    chocolate ~ "chocolate",
+    fruity ~ "fruity",
+    .default = "other"
+  ))#creates a new column
+
+#count(candy, type)
+```
+
+## Row 1
+
+```{r}
+#| content: valuebox
+#| title: "Total Candies"
+
+list(
+  icon = "basket",
+  color = "warning",
+  value = nrow(candy)
+)
+
+```
+
+```{r}
+#| content: valuebox
+#| title: "Number of Fruity Candies"
+
+list(
+  icon = "heart-fill",
+  color = "secondary",
+  value = sum(candy$type == "fruity")
+)
+```
+
+## Row 2

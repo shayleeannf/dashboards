@@ -35,19 +35,21 @@ ggplotly(bill_by_island)
 
 ```{r}
 #| title: Flipper Length by Mass
-ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
+flipper_length_mass <- ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
   geom_point()
+ggplotly(flipper_length_mass)
 ```
 
 ```{r}
 #| title: Bill Length by Mass
-ggplot(penguins, aes(body_mass_g, bill_length_mm, color = species)) +
+bill_length_mass <- ggplot(penguins, aes(body_mass_g, bill_length_mm, color = species)) +
   geom_point()
+ggplotly(bill_length_mass)
 ```
 
 # Data Table
 
-THis dataset describes 344 penguins and comes form the palerpenguins package. There are 3 species of penguins that live on 3 different islands in the Palmer Archipelago.
+This dataset describes 344 penguins and comes form the palerpenguins package. There are 3 species of penguins that live on 3 different islands in the Palmer Archipelago.
 
 ```{r}
 penguins <- penguins |>
