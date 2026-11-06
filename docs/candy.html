@@ -9,7 +9,7 @@
 <meta name="author" content="Shaylee-Ann Billaber-Ferrer">
 <meta name="dcterms.date" content="2026-11-02">
 
-<title>Candy Dashboard – dashboards</title>
+<title>Candy Dashboard – My Dashboards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1527cf75e32493cb6cf8cd23d860bbb9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1527cf75e32493cb6cf8cd23d860bbb9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-1527cf75e32493cb6cf8cd23d860bbb9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4397f41838bf6696a92fdfbed53ac40c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4397f41838bf6696a92fdfbed53ac40c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4397f41838bf6696a92fdfbed53ac40c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
 <script src="site_libs/quarto-dashboard/stickythead.js"></script>
 
@@ -84,6 +84,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.12.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 </head>
@@ -97,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dashboards</span>
+    <span class="navbar-title">My Dashboards</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -105,15 +114,23 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">about.qmd</span>
-    </span>
+    <a class="nav-link" href="./penguins.html"> 
+<span class="menu-text">Palmer Penguins</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./candy.html" aria-current="page"> 
+<span class="menu-text">Candy</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://shayleeannf.github.io" target="blank"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -124,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="quarto-dashboard-header">
 <nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
   <div class="navbar-container container-fluid">
-    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>    
 
@@ -138,56 +155,1488 @@ ul.task-list li input[type="checkbox"] {
         <div class="navbar-author">Shaylee-Ann Billaber-Ferrer</div>
       </div>
     </div>
-</div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-page-1" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#page-1" data-scrolling="false" href="#page-1" aria-controls="page-1" aria-selected="true"><span class="nav-link-text">Page 1</span></a></li><li class="nav-item" role="presentation"><a id="tab-data-table" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#data-table" data-scrolling="false" href="#data-table" aria-controls="data-table" aria-selected="false"><span class="nav-link-text">Data Table</span></a></li></ul></div></div>
 </nav>
 </header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
 
-<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
-<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="page-1" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-1">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="card valuebox cell bslib-card html-fill-container bslib-value-box bg-warning showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
+<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-warning showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
 <div class="card-body html-fill-item html-fill-container">
-<div data-icon="basket" class="html-fill-item html-fill-container value-box-grid">
+<div data-icon="arrow-down-circle" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-basket"></i></div>
+<i class="bi bi-arrow-down-circle"></i></div>
 <div class="value-box-area">
 <p class="value-box-title">
-Total Candies
+Least Sugary Candies
 </p>
 <p class="value-box-value">
-85
+One dime
 </p>
 </div>
 </div>
 </div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell bslib-card html-fill-container bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
 <div class="card-body html-fill-item html-fill-container">
-<div data-icon="heart-fill" class="html-fill-item html-fill-container value-box-grid">
+<div data-icon="arrow-up-circle" class="html-fill-item html-fill-container value-box-grid">
 <div class="value-box-showcase html-fill-item html-fill-container">
 
-<i class="bi bi-heart-fill"></i></div>
+<i class="bi bi-arrow-up-circle"></i></div>
 <div class="value-box-area">
 <p class="value-box-title">
-Number of Fruity Candies
+Most Sugary Candy
 </p>
 <p class="value-box-value">
-37
+Reese's stuffed with pieces
 </p>
 </div>
 </div>
 </div>
 <script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-<div class="bslib-grid" style="display: grid; grid-template-columns: ;
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-365f34d2b6cfb075fe8e" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-365f34d2b6cfb075fe8e">{"x":{"data":[{"x":[0.73199999000000004,0.60399997000000005,0.010999999999999999,0.010999999999999999,0.90600002000000002,0.46500000000000002,0.60399997000000005,0.31299999000000001,0.90600002000000002,0.60399997000000005,0.60399997000000005,0.73199999000000004,0.045999999999999999,0.73199999000000004,0.73199999000000004,0.127,0.73199999000000004,0.90600002000000002,0.46500000000000002,0.46500000000000002,0.46500000000000002,0.46500000000000002,0.127,0.43000000999999999,0.43000000999999999,0.43000000999999999,0.093000001999999998,0.19700000000000001,0.31299999000000001,0.22,0.045999999999999999,0.26699999000000002,0.82499999000000002,0.82499999000000002,0.87199998000000001,0.30199999,0.60399997000000005,0.73199999000000004,0.96499997000000004,0.31299999000000001,0.31299999000000001,0.84799999000000004,0.60399997000000005,0.31299999000000001,0.19700000000000001,0.22,0.46500000000000002,0.59299999000000003,0.093000001999999998,0.60399997000000005,0.58099997000000003,0.034000002000000001,0.72000003000000001,0.40599998999999998,0.98799998,0.73199999000000004,0.86000001000000004,0.73199999000000004,0.87199998000000001,0.22,0.94099997999999996,0.94099997999999996,0.26699999000000002,0.26699999000000002,0.54600000000000004,0.60399997000000005,0.068999998000000007,0.068999998000000007,0.15099999,0.56900001,0.96499997000000004,0.41800000999999998,0.16200000000000001,0.60399997000000005,0.60399997000000005,0.31299999000000001,0.17399998999999999,0.46500000000000002,0.31299999000000001,0.54600000000000004,0.22,0.093000001999999998,0.31299999000000001,0.186,0.87199998000000001],"y":[66.971725000000006,67.602936,32.261085999999999,46.116504999999997,52.341464999999999,50.347546000000001,56.914546999999999,23.417824,38.010962999999997,34.517681000000003,38.975037,36.017628000000002,24.524988,42.272075999999998,39.460555999999997,43.088923999999999,39.185504999999999,46.783347999999997,57.11974,34.158957999999998,51.412430000000001,42.178772000000002,55.375453999999998,62.284481,56.490501000000002,59.236122000000002,28.127438999999999,57.219250000000002,76.768600000000006,41.389557000000003,39.141055999999999,52.911391999999999,71.465050000000005,66.574584999999999,46.411715999999998,55.064072000000003,73.099556000000007,60.800700999999997,64.353340000000003,47.829754000000001,54.526451000000002,55.354045999999997,70.735641000000001,66.470680000000002,22.445340999999999,39.446800000000003,46.296596999999998,69.483788000000004,37.722335999999999,41.265510999999996,37.348522000000003,81.866257000000004,84.180289999999999,73.434989999999999,72.887900999999999,35.290756000000002,65.716285999999997,29.703690999999999,42.849144000000003,34.722000000000001,63.085140000000003,55.103695000000002,37.887188000000002,45.995826999999998,76.673782000000003,59.529251000000002,59.863998000000002,52.825946999999999,67.037627999999998,34.578991000000002,33.437550000000002,32.230995,27.303864999999998,54.861111000000001,48.982650999999997,43.068897,45.736747999999999,49.653503000000001,47.173228999999999,81.642914000000005,45.466282,39.011898000000002,44.375518999999997,41.904308,49.524113],"text":["sugarpercent: 0.732<br />winpercent: 66.97173","sugarpercent: 0.604<br />winpercent: 67.60294","sugarpercent: 0.011<br />winpercent: 32.26109","sugarpercent: 0.011<br />winpercent: 46.11650","sugarpercent: 0.906<br />winpercent: 52.34146","sugarpercent: 0.465<br />winpercent: 50.34755","sugarpercent: 0.604<br />winpercent: 56.91455","sugarpercent: 0.313<br />winpercent: 23.41782","sugarpercent: 0.906<br />winpercent: 38.01096","sugarpercent: 0.604<br />winpercent: 34.51768","sugarpercent: 0.604<br />winpercent: 38.97504","sugarpercent: 0.732<br />winpercent: 36.01763","sugarpercent: 0.046<br />winpercent: 24.52499","sugarpercent: 0.732<br />winpercent: 42.27208","sugarpercent: 0.732<br />winpercent: 39.46056","sugarpercent: 0.127<br />winpercent: 43.08892","sugarpercent: 0.732<br />winpercent: 39.18550","sugarpercent: 0.906<br />winpercent: 46.78335","sugarpercent: 0.465<br />winpercent: 57.11974","sugarpercent: 0.465<br />winpercent: 34.15896","sugarpercent: 0.465<br />winpercent: 51.41243","sugarpercent: 0.465<br />winpercent: 42.17877","sugarpercent: 0.127<br />winpercent: 55.37545","sugarpercent: 0.430<br />winpercent: 62.28448","sugarpercent: 0.430<br />winpercent: 56.49050","sugarpercent: 0.430<br />winpercent: 59.23612","sugarpercent: 0.093<br />winpercent: 28.12744","sugarpercent: 0.197<br />winpercent: 57.21925","sugarpercent: 0.313<br />winpercent: 76.76860","sugarpercent: 0.220<br />winpercent: 41.38956","sugarpercent: 0.046<br />winpercent: 39.14106","sugarpercent: 0.267<br />winpercent: 52.91139","sugarpercent: 0.825<br />winpercent: 71.46505","sugarpercent: 0.825<br />winpercent: 66.57458","sugarpercent: 0.872<br />winpercent: 46.41172","sugarpercent: 0.302<br />winpercent: 55.06407","sugarpercent: 0.604<br />winpercent: 73.09956","sugarpercent: 0.732<br />winpercent: 60.80070","sugarpercent: 0.965<br />winpercent: 64.35334","sugarpercent: 0.313<br />winpercent: 47.82975","sugarpercent: 0.313<br />winpercent: 54.52645","sugarpercent: 0.848<br />winpercent: 55.35405","sugarpercent: 0.604<br />winpercent: 70.73564","sugarpercent: 0.313<br />winpercent: 66.47068","sugarpercent: 0.197<br />winpercent: 22.44534","sugarpercent: 0.220<br />winpercent: 39.44680","sugarpercent: 0.465<br />winpercent: 46.29660","sugarpercent: 0.593<br />winpercent: 69.48379","sugarpercent: 0.093<br />winpercent: 37.72234","sugarpercent: 0.604<br />winpercent: 41.26551","sugarpercent: 0.581<br />winpercent: 37.34852","sugarpercent: 0.034<br />winpercent: 81.86626","sugarpercent: 0.720<br />winpercent: 84.18029","sugarpercent: 0.406<br />winpercent: 73.43499","sugarpercent: 0.988<br />winpercent: 72.88790","sugarpercent: 0.732<br />winpercent: 35.29076","sugarpercent: 0.860<br />winpercent: 65.71629","sugarpercent: 0.732<br />winpercent: 29.70369","sugarpercent: 0.872<br />winpercent: 42.84914","sugarpercent: 0.220<br />winpercent: 34.72200","sugarpercent: 0.941<br />winpercent: 63.08514","sugarpercent: 0.941<br />winpercent: 55.10370","sugarpercent: 0.267<br />winpercent: 37.88719","sugarpercent: 0.267<br />winpercent: 45.99583","sugarpercent: 0.546<br />winpercent: 76.67378","sugarpercent: 0.604<br />winpercent: 59.52925","sugarpercent: 0.069<br />winpercent: 59.86400","sugarpercent: 0.069<br />winpercent: 52.82595","sugarpercent: 0.151<br />winpercent: 67.03763","sugarpercent: 0.569<br />winpercent: 34.57899","sugarpercent: 0.965<br />winpercent: 33.43755","sugarpercent: 0.418<br />winpercent: 32.23100","sugarpercent: 0.162<br />winpercent: 27.30386","sugarpercent: 0.604<br />winpercent: 54.86111","sugarpercent: 0.604<br />winpercent: 48.98265","sugarpercent: 0.313<br />winpercent: 43.06890","sugarpercent: 0.174<br />winpercent: 45.73675","sugarpercent: 0.465<br />winpercent: 49.65350","sugarpercent: 0.313<br />winpercent: 47.17323","sugarpercent: 0.546<br />winpercent: 81.64291","sugarpercent: 0.220<br />winpercent: 45.46628","sugarpercent: 0.093<br />winpercent: 39.01190","sugarpercent: 0.313<br />winpercent: 44.37552","sugarpercent: 0.186<br />winpercent: 41.90431","sugarpercent: 0.872<br />winpercent: 49.52411"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.010999999999999999,0.023367088354430379,0.035734176708860754,0.04810126506329114,0.060468353417721513,0.072835441772151899,0.085202530126582271,0.097569618481012657,0.10993670683544303,0.1223037951898734,0.13467088354430379,0.14703797189873419,0.15940506025316456,0.17177214860759493,0.18413923696202533,0.1965063253164557,0.20887341367088608,0.22124050202531645,0.23360759037974682,0.24597467873417722,0.25834176708860757,0.27070885544303797,0.28307594379746837,0.29544303215189871,0.30781012050632911,0.32017720886075951,0.33254429721518985,0.34491138556962025,0.35727847392405065,0.369645562278481,0.3820126506329114,0.39437973898734174,0.40674682734177214,0.41911391569620254,0.43148100405063289,0.44384809240506329,0.45621518075949363,0.46858226911392403,0.48094935746835443,0.49331644582278478,0.50568353417721512,0.51805062253164558,0.53041771088607592,0.54278479924050627,0.55515188759493672,0.56751897594936707,0.57988606430379741,0.59225315265822787,0.60462024101265821,0.61698732936708856,0.62935441772151901,0.64172150607594936,0.6540885944303797,0.66645568278481016,0.6788227711392405,0.69118985949367084,0.7035569478481013,0.71592403620253164,0.72829112455696199,0.74065821291139233,0.75302530126582279,0.76539238962025313,0.77775947797468348,0.79012656632911393,0.80249365468354428,0.81486074303797462,0.82722783139240508,0.83959491974683542,0.85196200810126577,0.86432909645569622,0.87669618481012657,0.88906327316455691,0.90143036151898726,0.91379744987341771,0.92616453822784806,0.9385316265822784,0.95089871493670886,0.9632658032911392,0.97563289164556954,0.98799998],"y":[44.740604303689551,44.888067774483687,45.035531245277824,45.18299471607196,45.330458186866096,45.477921657660232,45.625385128454369,45.772848599248505,45.920312070042641,46.067775540836777,46.215239011630921,46.362702482425057,46.510165953219193,46.657629424013329,46.805092894807466,46.952556365601602,47.100019836395738,47.247483307189874,47.394946777984011,47.542410248778154,47.68987371957229,47.837337190366426,47.984800661160563,48.132264131954699,48.279727602748835,48.427191073542971,48.574654544337108,48.722118015131244,48.86958148592538,49.017044956719523,49.16450842751366,49.311971898307796,49.459435369101932,49.606898839896068,49.754362310690205,49.901825781484341,50.049289252278477,50.196752723072613,50.34421619386675,50.491679664660893,50.639143135455029,50.786606606249165,50.934070077043302,51.081533547837438,51.228997018631574,51.37646048942571,51.523923960219847,51.671387431013983,51.818850901808126,51.966314372602262,52.113777843396399,52.261241314190535,52.408704784984671,52.556168255778807,52.703631726572944,52.85109519736708,52.998558668161216,53.146022138955352,53.293485609749496,53.440949080543632,53.588412551337768,53.735876022131905,53.883339492926041,54.030802963720177,54.178266434514313,54.325729905308449,54.473193376102586,54.620656846896722,54.768120317690865,54.915583788485002,55.063047259279138,55.210510730073274,55.35797420086741,55.505437671661547,55.652901142455683,55.800364613249819,55.947828084043955,56.095291554838091,56.242755025632235,56.390218496426371],"text":["sugarpercent: 0.01100000<br />winpercent: 44.74060","sugarpercent: 0.02336709<br />winpercent: 44.88807","sugarpercent: 0.03573418<br />winpercent: 45.03553","sugarpercent: 0.04810127<br />winpercent: 45.18299","sugarpercent: 0.06046835<br />winpercent: 45.33046","sugarpercent: 0.07283544<br />winpercent: 45.47792","sugarpercent: 0.08520253<br />winpercent: 45.62539","sugarpercent: 0.09756962<br />winpercent: 45.77285","sugarpercent: 0.10993671<br />winpercent: 45.92031","sugarpercent: 0.12230380<br />winpercent: 46.06778","sugarpercent: 0.13467088<br />winpercent: 46.21524","sugarpercent: 0.14703797<br />winpercent: 46.36270","sugarpercent: 0.15940506<br />winpercent: 46.51017","sugarpercent: 0.17177215<br />winpercent: 46.65763","sugarpercent: 0.18413924<br />winpercent: 46.80509","sugarpercent: 0.19650633<br />winpercent: 46.95256","sugarpercent: 0.20887341<br />winpercent: 47.10002","sugarpercent: 0.22124050<br />winpercent: 47.24748","sugarpercent: 0.23360759<br />winpercent: 47.39495","sugarpercent: 0.24597468<br />winpercent: 47.54241","sugarpercent: 0.25834177<br />winpercent: 47.68987","sugarpercent: 0.27070886<br />winpercent: 47.83734","sugarpercent: 0.28307594<br />winpercent: 47.98480","sugarpercent: 0.29544303<br />winpercent: 48.13226","sugarpercent: 0.30781012<br />winpercent: 48.27973","sugarpercent: 0.32017721<br />winpercent: 48.42719","sugarpercent: 0.33254430<br />winpercent: 48.57465","sugarpercent: 0.34491139<br />winpercent: 48.72212","sugarpercent: 0.35727847<br />winpercent: 48.86958","sugarpercent: 0.36964556<br />winpercent: 49.01704","sugarpercent: 0.38201265<br />winpercent: 49.16451","sugarpercent: 0.39437974<br />winpercent: 49.31197","sugarpercent: 0.40674683<br />winpercent: 49.45944","sugarpercent: 0.41911392<br />winpercent: 49.60690","sugarpercent: 0.43148100<br />winpercent: 49.75436","sugarpercent: 0.44384809<br />winpercent: 49.90183","sugarpercent: 0.45621518<br />winpercent: 50.04929","sugarpercent: 0.46858227<br />winpercent: 50.19675","sugarpercent: 0.48094936<br />winpercent: 50.34422","sugarpercent: 0.49331645<br />winpercent: 50.49168","sugarpercent: 0.50568353<br />winpercent: 50.63914","sugarpercent: 0.51805062<br />winpercent: 50.78661","sugarpercent: 0.53041771<br />winpercent: 50.93407","sugarpercent: 0.54278480<br />winpercent: 51.08153","sugarpercent: 0.55515189<br />winpercent: 51.22900","sugarpercent: 0.56751898<br />winpercent: 51.37646","sugarpercent: 0.57988606<br />winpercent: 51.52392","sugarpercent: 0.59225315<br />winpercent: 51.67139","sugarpercent: 0.60462024<br />winpercent: 51.81885","sugarpercent: 0.61698733<br />winpercent: 51.96631","sugarpercent: 0.62935442<br />winpercent: 52.11378","sugarpercent: 0.64172151<br />winpercent: 52.26124","sugarpercent: 0.65408859<br />winpercent: 52.40870","sugarpercent: 0.66645568<br />winpercent: 52.55617","sugarpercent: 0.67882277<br />winpercent: 52.70363","sugarpercent: 0.69118986<br />winpercent: 52.85110","sugarpercent: 0.70355695<br />winpercent: 52.99856","sugarpercent: 0.71592404<br />winpercent: 53.14602","sugarpercent: 0.72829112<br />winpercent: 53.29349","sugarpercent: 0.74065821<br />winpercent: 53.44095","sugarpercent: 0.75302530<br />winpercent: 53.58841","sugarpercent: 0.76539239<br />winpercent: 53.73588","sugarpercent: 0.77775948<br />winpercent: 53.88334","sugarpercent: 0.79012657<br />winpercent: 54.03080","sugarpercent: 0.80249365<br />winpercent: 54.17827","sugarpercent: 0.81486074<br />winpercent: 54.32573","sugarpercent: 0.82722783<br />winpercent: 54.47319","sugarpercent: 0.83959492<br />winpercent: 54.62066","sugarpercent: 0.85196201<br />winpercent: 54.76812","sugarpercent: 0.86432910<br />winpercent: 54.91558","sugarpercent: 0.87669618<br />winpercent: 55.06305","sugarpercent: 0.88906327<br />winpercent: 55.21051","sugarpercent: 0.90143036<br />winpercent: 55.35797","sugarpercent: 0.91379745<br />winpercent: 55.50544","sugarpercent: 0.92616454<br />winpercent: 55.65290","sugarpercent: 0.93853163<br />winpercent: 55.80036","sugarpercent: 0.95089871<br />winpercent: 55.94783","sugarpercent: 0.96326580<br />winpercent: 56.09529","sugarpercent: 0.97563289<br />winpercent: 56.24276","sugarpercent: 0.98799998<br />winpercent: 56.39022"],"type":"scatter","mode":"lines","name":"fitted values","line":{"width":3.7795275590551185,"color":"rgba(137,192,174,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.840182648401829,"r":7.3059360730593621,"b":37.260273972602747,"l":37.260273972602747},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Sugar Content vs Popularity","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.037849999000000009,1.0368499790000001],"tickmode":"array","ticktext":["0.00","0.25","0.50","0.75","1.00"],"tickvals":[0,0.25,0.49999999999999994,0.75,1],"categoryorder":"array","categoryarray":["0.00","0.25","0.50","0.75","1.00"],"nticks":null,"ticks":"outside","tickcolor":"rgba(0,0,0,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(0,0,0,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Sugar percentile compared to other candies","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[19.358593549999998,87.267037450000004],"tickmode":"array","ticktext":["20","40","60","80"],"tickvals":[20,40,60.000000000000014,80],"categoryorder":"array","categoryarray":["20","40","60","80"],"nticks":null,"ticks":"outside","tickcolor":"rgba(0,0,0,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(0,0,0,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"Percentage of matchups the candy won","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"1795c32b028d7":{"x":{},"y":{},"type":"scatter"},"1795c4b495540":{"x":{},"y":{}}},"cur_data":"1795c32b028d7","visdat":{"1795c32b028d7":["function (y) ","x"],"1795c4b495540":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="data-table" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-data-table">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">competitorname</th>
+<th style="text-align: left;">chocolate</th>
+<th style="text-align: left;">fruity</th>
+<th style="text-align: left;">caramel</th>
+<th style="text-align: left;">peanutyalmondy</th>
+<th style="text-align: left;">nougat</th>
+<th style="text-align: left;">crispedricewafer</th>
+<th style="text-align: left;">hard</th>
+<th style="text-align: left;">bar</th>
+<th style="text-align: left;">pluribus</th>
+<th style="text-align: right;">sugarpercent</th>
+<th style="text-align: right;">pricepercent</th>
+<th style="text-align: right;">winpercent</th>
+<th style="text-align: left;">type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">100 Grand</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.860</td>
+<td style="text-align: right;">66.97173</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3 Musketeers</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">67.60294</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">One dime</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">32.26109</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">One quarter</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">46.11650</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Air Heads</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.906</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">52.34146</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Almond Joy</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">50.34755</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Baby Ruth</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">56.91455</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Boston Baked Beans</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">23.41782</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Candy Corn</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.906</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">38.01096</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Caramel Apple Pops</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">34.51768</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charleston Chew</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">38.97504</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chewey Lemonhead Fruit Mix</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">36.01763</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chiclets</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">24.52499</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dots</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">42.27208</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dum Dums</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">39.46056</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fruit Chews</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.127</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">43.08892</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fun Dip</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">39.18550</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gobstopper</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.906</td>
+<td style="text-align: right;">0.453</td>
+<td style="text-align: right;">46.78335</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Haribo Gold Bears</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">57.11974</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Haribo Happy Cola</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">34.15896</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Haribo Sour Bears</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">51.41243</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Haribo Twin Snakes</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">42.17877</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hershey’s Kisses</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.127</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">55.37545</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hershey’s Krackel</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.430</td>
+<td style="text-align: right;">0.918</td>
+<td style="text-align: right;">62.28448</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hershey’s Milk Chocolate</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.430</td>
+<td style="text-align: right;">0.918</td>
+<td style="text-align: right;">56.49050</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hershey’s Special Dark</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.430</td>
+<td style="text-align: right;">0.918</td>
+<td style="text-align: right;">59.23612</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jawbusters</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">28.12744</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Junior Mints</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.197</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">57.21925</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kit Kat</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">76.76860</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Laffy Taffy</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">41.38956</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lemonhead</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.104</td>
+<td style="text-align: right;">39.14106</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lifesavers big ring gummies</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.267</td>
+<td style="text-align: right;">0.279</td>
+<td style="text-align: right;">52.91139</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Peanut butter M&amp;M’s</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.825</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">71.46505</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">M&amp;M’s</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.825</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">66.57458</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mike &amp; Ike</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.872</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">46.41172</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Milk Duds</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.302</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">55.06407</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Milky Way</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">73.09956</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Milky Way Midnight</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.441</td>
+<td style="text-align: right;">60.80070</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Milky Way Simply Caramel</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.965</td>
+<td style="text-align: right;">0.860</td>
+<td style="text-align: right;">64.35334</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mounds</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.860</td>
+<td style="text-align: right;">47.82975</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mr Good Bar</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.918</td>
+<td style="text-align: right;">54.52645</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nerds</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.848</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">55.35405</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nestle Butterfinger</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">70.73564</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nestle Crunch</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">66.47068</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nik L Nip</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.197</td>
+<td style="text-align: right;">0.976</td>
+<td style="text-align: right;">22.44534</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Now &amp; Later</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">39.44680</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Payday</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">46.29660</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Peanut M&amp;Ms</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.593</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">69.48379</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pixie Sticks</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">37.72234</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pop Rocks</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.837</td>
+<td style="text-align: right;">41.26551</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Red vines</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.581</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">37.34852</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reese’s Miniatures</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">0.279</td>
+<td style="text-align: right;">81.86626</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reese’s Peanut Butter cup</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.720</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">84.18029</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reese’s pieces</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.406</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">73.43499</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reese’s stuffed with pieces</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.988</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">72.88790</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ring pop</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.965</td>
+<td style="text-align: right;">35.29076</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rolo</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.860</td>
+<td style="text-align: right;">0.860</td>
+<td style="text-align: right;">65.71629</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Root Beer Barrels</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.732</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">29.70369</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Runts</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.872</td>
+<td style="text-align: right;">0.279</td>
+<td style="text-align: right;">42.84914</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sixlets</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">34.72200</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Skittles original</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.941</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">63.08514</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skittles wildberry</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.941</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">55.10370</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nestle Smarties</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.267</td>
+<td style="text-align: right;">0.976</td>
+<td style="text-align: right;">37.88719</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smarties candy</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.267</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">45.99583</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Snickers</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.546</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">76.67378</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Snickers Crisper</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.651</td>
+<td style="text-align: right;">59.52925</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sour Patch Kids</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">59.86400</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sour Patch Tricksters</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">52.82595</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Starburst</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.151</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">67.03763</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strawberry bon bons</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.569</td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">34.57899</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sugar Babies</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.965</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">33.43755</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sugar Daddy</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.418</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">32.23100</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Super Bubble</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.162</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">27.30386</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Swedish Fish</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.755</td>
+<td style="text-align: right;">54.86111</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tootsie Pop</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">48.98265</td>
+<td style="text-align: left;">both</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tootsie Roll Juniors</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.511</td>
+<td style="text-align: right;">43.06890</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tootsie Roll Midgies</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.174</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">45.73675</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tootsie Roll Snack Bars</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">49.65350</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trolli Sour Bites</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.255</td>
+<td style="text-align: right;">47.17323</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Twix</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.546</td>
+<td style="text-align: right;">0.906</td>
+<td style="text-align: right;">81.64291</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Twizzlers</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">45.46628</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Warheads</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">39.01190</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Welch’s Fruit Snacks</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">0.313</td>
+<td style="text-align: right;">44.37552</td>
+<td style="text-align: left;">fruity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Werther’s Original Caramel</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">0.186</td>
+<td style="text-align: right;">0.267</td>
+<td style="text-align: right;">41.90431</td>
+<td style="text-align: left;">other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Whoppers</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: right;">0.872</td>
+<td style="text-align: right;">0.848</td>
+<td style="text-align: right;">49.52411</td>
+<td style="text-align: left;">chocolate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
 </div>
 </div>
 </div>

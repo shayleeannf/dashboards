@@ -4,8 +4,10 @@ author: "Shaylee-Ann Billaber-Ferrer"
 date: "11/2/26"
 format: 
   dashboard:
-    theme: sketchy
+    theme: minty
 ---
+
+# Page 1
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -31,25 +33,47 @@ candy <- candy |>
 
 ```{r}
 #| content: valuebox
-#| title: "Total Candies"
+#| title: "Least Sugary Candies"
 
 list(
-  icon = "basket",
+  icon = "arrow-down-circle",
   color = "warning",
-  value = nrow(candy)
+  value = candy$competitorname[candy$sugarpercent == min(candy$sugarpercent)]
 )
-
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Number of Fruity Candies"
+#| title: "Most Sugary Candy"
 
 list(
-  icon = "heart-fill",
+  icon = "arrow-up-circle",
   color = "secondary",
-  value = sum(candy$type == "fruity")
+  value = candy$competitorname[candy$sugarpercent == max(candy$sugarpercent)]
 )
 ```
 
 ## Row 2
+
+```{r}
+##sugar level (x), popularity (y)
+sugar_pop <- ggplot(candy, aes(sugarpercent, winpercent)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "#89C0AE") +
+  labs(
+    title = "Sugar Content vs Popularity",
+    subtitle = "Does more sugar mean more popular?",
+    x = "Sugar percentile compared to other candies",
+    y = "Percentage of matchups the candy won"
+  ) +
+  theme_classic()
+
+ggplotly(sugar_pop)
+```
+
+# Data Table
+
+```{r}
+candy <- candy
+knitr::kable(candy)
+```

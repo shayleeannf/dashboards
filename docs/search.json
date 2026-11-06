@@ -1,9 +1,9 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sample Dashboards",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Palmer Penguins Dashboard\nThis dataset describes 344 penguins and comes form the palerpenguins package. There are 3 species of penguins that live on 3 different islands in the Palmer Archipelago. The dashboard features two pages click the link to learn more!\n\n\nCandy Dashboard\nThis dataset includes 85 different candies and their specific properties. The dashboard compares sugar content to popularity answering the question: Does more sugar mean more popular? Click the link to learn more!"
   }
 ]

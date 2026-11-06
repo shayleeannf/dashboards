@@ -3,12 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "dashboards"
+  title: "My Dashboards"
   navbar:
-    left:
+    right: 
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: penguins.qmd
+        text: Palmer Penguins
+      - href: candy.qmd
+        text: Candy
+      - icon: house-door-fill
+        href: https://shayleeannf.github.io
+        target: blank
+      
 
 format:
   html:

@@ -1,6 +1,5 @@
 ---
 title: "Palmer Penguins Dashboard"
-author: "Shaylee Ferrer"
 format: dashboard
 ---
 
@@ -48,8 +47,6 @@ ggplotly(bill_length_mass)
 ```
 
 # Data Table
-
-This dataset describes 344 penguins and comes form the palerpenguins package. There are 3 species of penguins that live on 3 different islands in the Palmer Archipelago.
 
 ```{r}
 penguins <- penguins |>
