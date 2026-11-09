@@ -63,6 +63,10 @@ list(
 
 ## Row 2
 
+**Graph Analysis:** The correlation coefficient, given to us by the teal line, is 0.23. This means that there is a slightly positive trend to conclude that more sugar means more popular. However, because this number is really close to 0, and our scatter plot has dots all over the place, I would say that this correlation between sugar content and popularity is very weak.
+
+## Row 3
+
 ```{r}
 #| fig-width: 10
 #| fig-height: 5
