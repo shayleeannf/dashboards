@@ -4,10 +4,11 @@ author: "Shaylee-Ann Billaber-Ferrer"
 date: "11/2/26"
 format: 
   dashboard:
+    css: styles.css
     theme: minty
 ---
 
-# Page 1
+# Analysis
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -29,7 +30,7 @@ candy <- candy |>
 #count(candy, type)
 ```
 
-## Row 1
+## Row 1  {height="210px"}
 
 ```{r}
 #| content: valuebox
@@ -38,7 +39,7 @@ candy <- candy |>
 list(
   icon = "arrow-down-circle",
   color = "warning",
-  value = candy$competitorname[candy$sugarpercent == min(candy$sugarpercent)]
+  value = paste(candy$competitorname[candy$sugarpercent == min(candy$sugarpercent)], collapse = " and ")
 )
 ```
 
@@ -56,10 +57,26 @@ list(
 ## Row 2
 
 ```{r}
-##sugar level (x), popularity (y)
+#| fig-width: 10
+#| fig-height: 5
+#| echo: false
+#| height: 450px
+
+# Calculate the correlation coefficient (r)
+r_value <- round(cor(candy$sugarpercent, candy$winpercent, use = "complete.obs"), 2)
+
+# Creating a tooltip for the scatter plot and the linear line
+scatter_tooltip <- paste0(
+  "<b>", candy$competitorname, "</b>",
+  "<br>Sugar Percentile: ", round(candy$sugarpercent, 2),
+  "<br>Win Percentage: ", round(candy$winpercent, 1), "%"
+)
+line_tooltip <- paste0("Linear Trend Line<br>Correlation (r): ", r_value)
+
+# Sugar level (x), Popularity (y) scatter plot
 sugar_pop <- ggplot(candy, aes(sugarpercent, winpercent)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE, color = "#89C0AE") +
+  geom_point(aes(text = scatter_tooltip)) +
+  geom_smooth(aes(text = line_tooltip), method = "lm", se = FALSE, color = "#89C0AE") +
   labs(
     title = "Sugar Content vs Popularity",
     subtitle = "Does more sugar mean more popular?",
@@ -68,7 +85,7 @@ sugar_pop <- ggplot(candy, aes(sugarpercent, winpercent)) +
   ) +
   theme_classic()
 
-ggplotly(sugar_pop)
+ggplotly(sugar_pop, tooltip = "text")
 ```
 
 # Data Table
