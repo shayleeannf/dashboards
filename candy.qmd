@@ -1,7 +1,5 @@
 ---
 title: "Candy Dashboard"
-author: "Shaylee-Ann Billaber-Ferrer"
-date: "11/2/26"
 format: 
   dashboard:
     css: styles.css
@@ -30,28 +28,37 @@ candy <- candy |>
 #count(candy, type)
 ```
 
-## Row 1  {height="210px"}
+## Row 1 {height="20%"}
 
 ```{r}
 #| content: valuebox
-#| title: "Least Sugary Candies"
+#| title: "Least Sugary Candies: One Dime and One Quarter"
+
+## I had a really hard time trying to change the size of the value box or even trying to change the font size for the value. Because of this I just put the least sugary candies in the title. I have the code for finding the least sugary candies:
+## value = paste(candy$competitorname[candy$sugarpercent == min(candy$sugarpercent)], collapse = " and ")
 
 list(
   icon = "arrow-down-circle",
   color = "warning",
-  value = paste(candy$competitorname[candy$sugarpercent == min(candy$sugarpercent)], collapse = " and ")
+  value = ""
 )
+
+
 ```
 
 ```{r}
 #| content: valuebox
-#| title: "Most Sugary Candy"
+#| title: "Most Sugary Candy: Reese's stuffed with pieces"
+
+## I had a really hard time trying to change the size of the value box or even trying to change the font size for the value. Because of this I just put the most sugary candy in the title. I have the code for finding the most sugary candy:
+## value = candy$competitorname[candy$sugarpercent == max(candy$sugarpercent)]
 
 list(
   icon = "arrow-up-circle",
   color = "secondary",
-  value = candy$competitorname[candy$sugarpercent == max(candy$sugarpercent)]
+  value = "" 
 )
+
 ```
 
 ## Row 2
@@ -90,7 +97,26 @@ ggplotly(sugar_pop, tooltip = "text")
 
 # Data Table
 
+This candy dataset includes 85 different candies and 14 different candy properties. The **Sugar Percentile** and **Price Percentile** columns represent percentile rankings, indicating how a candy's sugar content and price compare relative to all other candies in the dataset. For example, a sugar percentile of 0.85 means that particular candy has more sugar than 85% of the other candies in the dataset. The **Win Percentage** is scaled from 0-100 representing how often that candy won head-to-head matchups in the survey.
+
 ```{r}
-candy <- candy
-knitr::kable(candy)
+library(dplyr)
+table_data <- candy |>
+  dplyr::rename(
+    "Candy Name"         = competitorname,
+    "Chocolate"          = chocolate,
+    "Fruity"             = fruity,
+    "Caramel"            = caramel,
+    "Peanuty/Almondy"    = peanutyalmondy,
+    "Nougat"             = nougat,
+    "Crisped Rice Wafer" = crispedricewafer,
+    "Hard"               = hard,
+    "Bar"                = bar,
+    "Many per Package"   = pluribus,
+    "Sugar Percentile"   = sugarpercent,
+    "Price Percentile"   = pricepercent,
+    "Win Percentage"     = winpercent,
+    "Type"               = type
+  )
+knitr::kable(table_data)
 ```
